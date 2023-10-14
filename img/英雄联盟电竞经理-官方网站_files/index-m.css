@@ -1,0 +1,493 @@
+html,body,div,p,ul,li,dl,dt,dd,em,i,span,a,img,input,h1,h2,h3,h4,h5{margin:0;padding:0}
+a,img,input{border:none}
+body{font:14px/1.75 -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+a{text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+ul,li{list-style:none}
+body{padding-top:0 !important}
+@font-face{font-family:'fzltzchk';src:url(//game.gtimg.cn/images/lole/font/fzltzchk.ttf)}
+@font-face{font-family:'fzcthjw';src:url(//game.gtimg.cn/images/lole/font/fzcthjt.ttf)}
+@font-face{font-family:'agen';src:url(//game.gtimg.cn/images/lole/font/AgencyFB-Bold.otf)}
+@font-face{font-family:'rz3';src:url(//game.gtimg.cn/images/lole/font/rz3.TTF)}
+.center{margin:0 auto}
+.bk{border:1px solid white}
+.wrap{width:750px;height:auto;overflow:hidden}
+.wrap div,.wrap::after,.wrap::before,.wrap span,.wrap *{background-repeat:no-repeat}
+.ost{display:none}
+.nav{width:750px;height:97px;background:url(//game.gtimg.cn/images/lole/V4/m/mnav-bg.png);position:fixed;z-index:1000}
+.logo-con{width:125px;height:47px;background:url(//game.gtimg.cn/images/lole/V4/m/logo-m.png);position:absolute;top:25px;left:32px;display:inline-block}
+.popdown{width:450px;height:100vh;background:rgba(0,0,0,1);position:absolute;top:96px;display:block !important;z-index:100;right:-100%;transition:.4s linear}
+.popdown li{width:85%;height:100px;margin-top:60px;border-bottom:1px solid rgba(255,255,255,0.2);margin-left:15%}
+.popdown li:hover{background:rgba(255,255,255,0.3)}
+.popdown li a{width:100%;height:100%;display:block;color:#fff;line-height:100px;text-indent:0px;font-size:28px;text-align:left}
+.ac-left{right:0 !important}
+.ac-right{right:-100% !important}
+.login-con{width:300px;position:relative;text-align:right;left:340px;font-size:16px;color:#fff;top:36px}
+.login1{width:300px;position:relative;text-align:right;left:0px;font-size:16px;color:#fff;top:0}
+.login1 a{font-size:16px;color:#fff;font-weight:600}
+.login2 div{display:inline-block}
+.login2 a{font-size:16px;color:#fff;font-weight:600}
+.mnav-btn{position:absolute;width:59px;height:59px;background:url(//game.gtimg.cn/images/lole/V4/m/nav-btn.png);top:50%;transform:translateY(-50%);right:25px}
+.mnav-btn2{}
+.footers{width:750px;height:1005px;margin-top:0px}
+.footers2{width:750px;height:1005px;background:url(//game.gtimg.cn/images/lole/V4/m/footers2.jpg);background-size:100% 100%;margin-top:-1px}
+.footers3{width:750px;height:1005px;background:url(//game.gtimg.cn/images/lole/V4/m/footers3.jpg);background-size:100% 100%;margin-top:-1px}
+.footertitle{width:502px;height:142px;background:url(//game.gtimg.cn/images/lole/V4/m/footertitle.png);position:relative;top:60px;margin:0 auto}
+
+.footers2 .footertitle{background-position:center bottom;height:95px;background:url(//game.gtimg.cn/images/lole/V4/m/footer2-title.png);height:142px;}
+.footers3 .footertitle{background-position:center bottom;height:95px;background:url(//game.gtimg.cn/images/lole/V4/m/footer2-title.png);height:142px;}
+.footer-more{width:630px;height:315px;margin-top:130px;display:flex;justify-content:space-around;flex-wrap:wrap}
+.more{width:281px;height:121px;background:url(//game.gtimg.cn/images/lole/V4/m/footermbg.png);position:relative}
+.more a,.more4 a{display:inline-block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%}
+.more1 a{background:url(//game.gtimg.cn/images/lole/V4/m/lolapp.png)no-repeat center}
+.more2 a{background:url(//game.gtimg.cn/images/lole/V4/m/wechat.png)no-repeat center}
+.more3 a{background:url(//game.gtimg.cn/images/lole/V4/m/weibo.png)no-repeat center}
+.more4 a{background:url(//game.gtimg.cn/images/lole/V4/m/qq.png)no-repeat center;background-position-x:32px}
+.more:hover{filter:brightness(110%)}
+.footerlogo{width:545px;height:53px;text-align:center;margin-top:50px;margin:36px auto}
+.footerlogo div{display:inline-block}
+.tencent{width:192px;height:36px;background:url(//game.gtimg.cn/images/lole/V4/m/footerlogo1.png)}
+.riot{width:86px;height:36px;background:url(//game.gtimg.cn/images/lole/V4/m/footerlogo2.png);position:relative;left:20px;margin-left:10px}
+.footercontent{width:677px;margin:0 auto;text-align:center}
+.footercontent p{margin:0 auto;color:#dedede;font-size:11px;position:relative;line-height:25px}
+.footercontent p a{color:#dedede}
+.footercontent p:nth-child(1){width:385px;text-align:center}
+.footercontent p:nth-child(5)::after{content:'';width:16px;height:17px;position:absolute;background:url(//game.gtimg.cn/images/lole/V3/footeryue.png);top:3px;left:113px}
+.page1{width:750px;height:4640px;background:url(//game.gtimg.cn/images/lole/V4/m/page1bg2.jpg);background-size:100% 100%;margin-top:96px;position:relative}
+.videobg-con{width:750px;height:1000px;position:relative}
+.videobg-con video{display:none}
+.btn-con{width:616px;height:500px;position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
+.videobtn-con{width:109px;height:109px;position:relative;top:0px;animation:headPlay 2s infinite linear}
+.videobtn-con:hover{filter:brightness(1.1)}
+@keyframes headPlay{0%,100%{transform:scale(0.9)}
+50%{transform:scale(0.8)}
+}.page1-slg{width:655px;height:131px;margin-top:335px}
+.appointment-btn{position:relative;width:326px;height:98px;background:url(//game.gtimg.cn/images/lole/V4/m/page1-inbtn.png);font-family:'rz3'}
+.appointment-btn a{display:block;position:absolute;width:100%;height:100%;top:0;left:0}
+.pagest-main .receive{margin-top: -125px;}
+.receive{position:relative;width:326px;height:96px;background:url(//game.gtimg.cn/images/lole/V4/m/page1-inbtn.png);font-family:'rz3'}
+.receive  a{display:block;position:absolute;width:100%;height:100%;top:0;left:0}
+.receive p{width:100%;font-size:42px;line-height:96px;text-align:center;color:#421a13;letter-spacing:3px;font-weight:500;font-family:'rz3'}
+.appointment-btn p{width:100%;font-size:42px;line-height:96px;text-align:center;color:#421a13;letter-spacing:3px;font-weight:500;font-family:'rz3'}
+.appointment-btn2{width:301px;height:96px;background:url(//game.gtimg.cn/images/lole/V4/m/page1-inbtn.png);filter:grayscale(100%)}
+.appointment-btn2 p{width:100%;font-size:42px;line-height:96px;text-align:center;color:#421a13;letter-spacing:3px;font-weight:500;font-family:'rz3'}
+.pagest-main{height: 800px;}
+.pagest-bg{background:url(//game.gtimg.cn/images/lole/V4/m/pagest-img.png)no-repeat;width:750px;height:780px;margin:0 auto;margin-top:80px}
+.part0-bg{background:url(//game.gtimg.cn/images/lole/V4/m/page0-img.png)no-repeat center top;width:100%;height:728px;margin:0 auto;margin-top:310px;margin-bottom: 30px;}
+.videobtn-con a{width:100%;height:100%;display:inline-block}
+.dia-video{width:650px;height:366px;background-color:#121628;outline:none}
+.dia-video .dia-con{width:100%;height:100%}
+.dia-video .dia-close{position:absolute;top:-54px;right:-15px;background:url(//game.gtimg.cn/images/lole/V3/dia-close.png) no-repeat 0 0;background-size:100% 100%;width:54px;height:54px;outline:none}
+.page1-main{width:750px;height:2400px;position:relative;}
+.page1-part1{width:350px;height:132px;background:url(//game.gtimg.cn/images/lole/V4/m/page1-part1.png);position:relative;top:85px;margin:0 auto;margin-top: 40px;}
+.page1newall{width:200px;height:35px;position:absolute;top:145px;right:0}
+.page1newall a{display:none;width:100%;color:#fff;font-size:22px;font-weight:600;line-height:35px;text-align:center}
+.page1-part1bg{display:none}
+.sw1-con{width:750px;height:445px;position:relative;margin-top:130px;top:10px}
+.swiper-container1{width:750px;height:510px;position:relative}
+.swiper-container1 .swiper-slide{width:519px;height:445px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg1-1-new.png) no-repeat;background-size:100% 100%}
+.swiper-container1 .swiper-wrapper .swiper-slide::after{content:"";width:100%;height:100%;background-color:#000;opacity:0.4;position:absolute;top:0;left:0}
+.swiper-container1 .swiper-wrapper .swiper-slide-active::after{opacity:0}
+.swiper-container1 .swiper-pagination-bullet{width:53px;height:7px;-webkit-clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);border-radius:0;background:#ffffff;opacity:1;transition:0.5s}
+.swiper-container1 .swiper-pagination-bullet.swiper-pagination-bullet-active{width:122px;height:10px;-webkit-clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);border-radius:0;background:#dda74b;opacity:1;transition:0.5s}
+.swiper-container2 .swiper-pagination-bullet{width:56px;height:6px;-webkit-clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);border-radius:0;background:#ffffff;opacity:1;transition:0.5s}
+.swiper-container2 .swiper-pagination-bullet.swiper-pagination-bullet-active{width:106px;height:6px;-webkit-clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);border-radius:0;background:#dda74b;opacity:1;transition:0.5s}
+.sw1-img1{width:519px;height:282px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg.png);background-size:100% 100% !important}
+.sw1-img2{width:519px;height:332px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg.png)}
+.sw1-img3{width:519px;height:332px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg.png)}
+.sw1-img4{width:519px;height:332px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg.png)}
+.sw1-titlecon{width:519px;height:164px;background:url(//game.gtimg.cn/images/lole/V4/m/sw1bg2.png);background-size:100% 100%}
+.swiper-button-prev1,.swiper-button-next1{width:66px;height:66px;position:absolute;top:50%;transform:translateY(-50%);z-index:10}
+.swiper-button-prev1{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-4.png);background-size:100% 100%;left:20px}
+.swiper-button-prev1.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-2.png);background-size:100% 100%;left:20px}
+.swiper-button-next1{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-3.png);background-size:100% 100%;right:20px}
+.swiper-button-next1.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-3.png);background-size:100% 100%;right:20px}
+.sw1-time{color:#000;display:inline-block;font-size:20px;position:relative;top:10px;left:20px}
+.sw1-news{color:#e42b2d;display:inline-block;font-size:20px;position:relative;top:10px;left:30px}
+.sw1-title{font-size:30px;color:#171b28;margin-top:10px;margin-left:20px;font-weight:600;word-break:break-all;text-overflow:ellipsis;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+.sw1-abstract{font-size:20px;color:#171b28;margin-top:0px;margin-left:20px;line-height:25px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;text-overflow:ellipsis;-webkit-box-orient:vertical}
+.page1-part2{width:469px;height:144px;background:url(//game.gtimg.cn/images/lole/V4/m/page1title2.png);margin-top:170px}
+.sw2-con{position:relative;width:615px;height:410px;margin-top:60px}
+.swiper-container2{width:615px;height:400px;overflow:hidden}
+.swiper-container2 .swiper-slide{position:relative;width:615px;height:346px}
+.sw2-img{width:615px;height:346px}
+.sw2-img1{background:url(//game.gtimg.cn/images/lole/V4/m/sw2-m1.jpg);background-size:100% 100%}
+.sw2-img2{background:url(//game.gtimg.cn/images/lole/V4/m/sw2-m2.jpg);background-size:100% 100%}
+.sw2-img3{background:url(//game.gtimg.cn/images/lole/V4/m/sw2-m3.jpg);background-size:100% 100%}
+.sw2-img4{background:url(//game.gtimg.cn/images/lole/V4/m/sw2-m4.jpg);background-size:100% 100%}
+.sw2-img5{background:url(//game.gtimg.cn/images/lole/V4/m/sw2-m5.jpg);background-size:100% 100%}
+.swiper-container2 .swi-inner {
+    width: 625px;
+    height: 355px;
+    background-image: url(//game.gtimg.cn/images/lole/V4/m/border.png);
+    position: absolute;
+    left: 50%;
+    top: -11px;
+    z-index: 1;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.sw2-sub{width:615px;height:39px;position:absolute;bottom:0;left:0;background:url(//game.gtimg.cn/images/lole/V4/m/sw2-sub.png)}
+.sw2-sub p{color:#141824;font-size:23px;width:100%;font-family:'fzcthjw';text-indent:10px}
+.swiper-button-next2,.swiper-button-prev2{width:58px;height:58px;position:absolute;top:37%;transform:translateY(-50%);z-index:5}
+.swiper-button-prev2{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-4.png);background-size:100% 100%;left:-35px}
+.swiper-button-prev2.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-2.png);background-size:100% 100%;left:-35px}
+.swiper-button-next2{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-3.png);background-size:100% 100%;right:-35px}
+.swiper-button-next2.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-3.png);background-size:100% 100%;right:-35px}
+.page1-part3{width:273px;height:62px;background:url(//game.gtimg.cn/images/lole/V4/m/page1title3.png);margin-top:180px}
+.page1-part3-sub{width:700px;height:50px;margin-top:20px;text-align:center}
+.page1-part3-sub p{color:#656565;font-size:16px;font-weight:600}
+.sw3-con{width:750px;height:501px;position:relative;margin-top:20px}
+.sw3-con .swiper-container3{width:750px;height:501px;position:relative}
+.sw3-bg{width:245px;height:501px;background:url(//game.gtimg.cn/images/lole/V4/m/01.png)}
+.swiper-container3 .swiper-wrapper{width:245px;height:501px;cursor:none}
+.swiper-container3 .swiper-wrapper .swiper-slide{width:245px;height:501px;align-items:center;transition:300ms;transform:scale(0.8);cursor:pointer}
+.sw3-bg{width:245px;height:501px;background:url(//game.gtimg.cn/images/lole/V4/m/sw3bg1.png);position:relative;cursor:none;filter:brightness(50%)}
+.sw3-bg::after{content:''}
+.swiper-container3 .swiper-slide-active{width:245px;height:501px;margin-left:-5px}
+.swiper-slide-active .sw3-bg{transform:scale(1);filter:brightness(100%)}
+.swiper-slide-active .sw3-bg::after{width:292px;height:501px;position:absolute;top:0px;left:-31px;background:url(//game.gtimg.cn/images/lole/V4/m/sw3bg2.png)}
+.swiper-button-next3{width:85px;height:85px;background:url(//game.gtimg.cn/images/lole/V4/m/sw3-btn2.png);position:absolute;top:50%;transform:translateY(-50%);right:50px;z-index:100}
+.swiper-button-prev3{width:85px;height:85px;background:url(//game.gtimg.cn/images/lole/V4/m/sw3-btn1.png);position:absolute;top:50%;transform:translateY(-50%);left:50px;z-index:100}
+.page2{width:750px;height:auto;background:url(//game.gtimg.cn/images/lole/V4/m/page2bg.jpg);margin-top:96px;background-size:100% 100%}
+.page2-main{height:auto}
+.page2new-mcon{height:auto}
+.page2title{width:350px;height:128px;background:url(//game.gtimg.cn/images/lole/V4/m/page2-title.png);position:relative;top:58px;margin:0 auto}
+.page2part1{display:none}
+.sw4-con{width:663px;height:408px;margin-top:100px;position:relative}
+.swiper-container4 .swiper-slide{width:663px;height:408px;background:url(//game.gtimg.cn/images/lole/V4/m/page2sw4-bg.png)}
+.swiper-container4 .swiper-slide:nth-child(4){display:none}
+.swiper-button-prev4,.swiper-button-next4{width:82px;height:81px;position:absolute;top:50%;transform:translateY(-50%);z-index:10}
+.swiper-button-prev4{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-4.png);background-size:100% 100%;left:-26px}
+.swiper-button-prev4.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-2.png);background-size:100% 100%;left:-26px}
+.swiper-button-next4{background:url(//game.gtimg.cn/images/lole/V3/sw1btn4-3.png);background-size:100% 100%;right:-26px}
+.swiper-button-next4.swiper-button-disabled{background:url(//game.gtimg.cn/images/lole/V3/sw1btn2-3.png);background-size:100% 100%;right:-26px}
+.sw4-titlecon{width:100%;height:98px;background:url(//game.gtimg.cn/images/lole/V4/m/page2sw4titlebg.png);position:absolute;bottom:-85px;left:0;background-size:100% 100%}
+.sw4-time{font-size:16px;color:#0e1318;display:inline-block;margin:10px 0 0 20px;position:relative;left:470px;top:45px}
+.sw4-news{font-size:16px;color:#d52a2b;display:inline-block;margin-left:15px;position:relative;left:470px;top:45px}
+.sw4-title{font-size:24px;color:#0e1318;font-weight:600;margin:-30px 0 0 20px}
+.sw4-abstract{width:445px;line-height:20px;font-size:16px;color:#0e1318;margin:0px 0 0 20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.page2videobtn{width:65px;height:65px;cursor:pointer;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.sw4-img{position:absolute;top:-10px;left:0;width:100%;height:100%;background-size:100% 100% !important}
+.sw4-img video{width:100%;height:100%}
+.page2tabbtncon{width:713px;height:49px;position:relative;display:flex;justify-content:space-around;align-items:flex-end;margin-top:150px;margin-left:18px}
+.page2tabbtn{width:152px;height:54px;background:url(//game.gtimg.cn/images/lole/V4/m/page2tab-bg1.png)}
+.page2tabbtn-ac{background:url(//game.gtimg.cn/images/lole/V4/m/page2tab-bg2.png)}
+.page2tabbtn p{width:100%;line-height:54px;color:#1b3f73;font-size:21px;text-align:center;user-select:none}
+.page2tabbtn-ac p{color:#3f3500}
+.page2new-con{width:675px;height:auto;margin-top:50px}
+.page2new{width:675px;height:584px}
+.page2new:nth-child(2){margin-top:80px}
+.page2new-i{width:678px;height:381px;background:url(//game.gtimg.cn/images/lole/V4/m/page2-new.png);background-size:100% 100% !important}
+.page2new-t{width:678px;height:205px;background:url(//game.gtimg.cn/images/lole/V4/m/page2newbg.png)}
+.page2new2 .page2new-i{background:url(//game.gtimg.cn/images/lole/V4/m/page2-new2.png)}
+.page2new3 .page2new-i{background:url(//game.gtimg.cn/images/lole/V4/m/page2-new.png)}
+.page2new4 .page2new-i{background:url(//game.gtimg.cn/images/lole/V4/m/page2-new2.png)}
+.page2new-time{font-size:22px;color:#214b7c;display:inline-block;margin:10px 0 0 20px}
+.page2new-new{font-size:22px;color:#e42b2d;display:inline-block;margin-left:15px}
+.page2new-title{font-size:34px;color:#4d4235;margin:10px 0 0 20px;font-weight:600;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+.page2new-content{font-size:22px;color:#4d4235;margin:0 0 0 20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+.page2new:nth-child(n+2){margin-top:60px}
+.page2new1 .page2new:nth-child(n+5){display:block}
+.page2new2 .page2new:nth-child(n+5){display:block}
+.page2new3 .page2new:nth-child(n+5){display:block}
+.page2new4 .page2new:nth-child(n+5){display:block}
+.page2-btncon{width:520px;height:50px;margin-top:35px;display:flex;flex-wrap:nowrap;justify-content:center;position:relative}
+.page2-btnleft,.page2-btnright{width:116px;height:49px;display:inline-block}
+.page2-btnleft{background:url(//game.gtimg.cn/images/lole/V3/page2-left.png)no-repeat;background-size:100% 100%;margin-right:20px}
+.page2-btnright{background:url(//game.gtimg.cn/images/lole/V3/page2-right.png)no-repeat;background-size:100% 100%;margin-left:20px}
+.page2-btncon span{-webkit-clip-path:polygon(25% 0%,100% 0%,75% 100%,0% 100%);clip-path:polygon(25% 0%,100% 0%,75% 100%,0% 100%);background:#fcf9f5;width:58px;height:49px;color:#000;font-size:18px;text-align:center;line-height:49px;position:relative;margin:0 5px}
+.sp-ac{background:#ffc82c!important;color:#000 !important;cursor:pointer !important}
+.page3{width:750px;height:3739px;background:url(//game.gtimg.cn/images/lole/V4/m/page3bg.jpg);margin-top:96px}
+.page3-title{width:711px;height:165px;background:url(//game.gtimg.cn/images/lole/V4/m/page3-title.png);position:relative;top:30px}
+.page3-btn{width:580px;height:68px;margin-top:60px;margin-left:35px;display:flex;flex-wrap:nowrap;justify-content:space-around;line-height:68px;overflow:visible}
+.page3btn{width:184px;height:68px;background:url(//game.gtimg.cn/images/lole/V4/m/page3btn1.png);background-position:center;line-height:68px;font-size:24px;color:#000;text-align:center;font-weight:600}
+.page3btn-ac{background:url(//game.gtimg.cn/images/lole/V4/m/page3btn2.png)}
+.page3card-con{width:678px;height:3300px;margin-top:20px;overflow:hidden}
+.page3card{width:100%;height:auto;position:relative;display:none}
+.page3card-ac{display:flex;justify-content:flex-start;flex-wrap:wrap}
+.page3card div{width:186px;height:291px;margin-left:28px;margin-top:25px;text-align:left;background-position:center;background-size:100% 100%}
+.ssr1{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr2{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr3{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr4{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr5{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr6{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.ssr7{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr8{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr9{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr10{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr11{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr12{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.ssr13{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr14{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr15{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr16{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr17{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr18{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.ssr19{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr20{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr21{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr22{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr23{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr24{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.ssr25{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.ssr26{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.ssr27{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.ssr28{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.ssr29{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.ssr30{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr1{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr2{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr3{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr4{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr5{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr6{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.sr7{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr8{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr9{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr10{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr11{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr12{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.sr13{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr14{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr15{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr16{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr17{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr18{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.sr19{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr20{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr21{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr22{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr23{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr24{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.sr25{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr26{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr27{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr28{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr29{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.sr30{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r1{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r2{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r3{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r4{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r5{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r6{background:url(//game.gtimg.cn/images/lole/V4/m/page3-1.png)}
+.r7{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r8{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r9{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r10{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r11{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r12{background:url(//game.gtimg.cn/images/lole/V4/m/page3-2.png)}
+.r13{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r14{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r15{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r16{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r17{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r18{background:url(//game.gtimg.cn/images/lole/V4/m/page3-3.png)}
+.r19{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r20{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r21{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r22{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r23{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r24{background:url(//game.gtimg.cn/images/lole/V4/m/page3-4.png)}
+.r25{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r26{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r27{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r28{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r29{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.r30{background:url(//game.gtimg.cn/images/lole/V4/m/page3-5.png)}
+.page4{width:750px;height:2645px;background:url(//game.gtimg.cn/images/lole/V4/m/page4bg.jpg);margin-top:96px}
+.drop-down-con{width:690px;height:41px;position:relative;top:30px;margin:0 auto}
+.drop-down{width:162px;height:41px;display:inline-block;background:url(//game.gtimg.cn/images/lole/V3/page4downbg1.png);position:relative;margin-left:20px}
+.drop-down1{margin-left:0px}
+.box-name{color:#fff;font-size:20px;line-height:41px;margin-left:20px}
+.down-box{display:none;width:159px;height:170px;position:absolute;top:41px;left:0;background-image:linear-gradient(90deg,#3b4472,#222741);border:1px solid #94548d;z-index:10;overflow-y:scroll}
+.down-box span{color:#fff;font-size:16px;display:block;margin-left:2px;height:35px;line-height:35px;cursor:none;user-select:none}
+.down-box span:hover{background:rgba(255,255,255,0.5)}
+.drop-down-con2{height:42px;margin-top:60px}
+.search-con{width:312px;height:42px;background:url(//game.gtimg.cn/images/lole/V4/m/searchbg.png);margin-left:30px;position:relative;display:inline-block}
+.icon{display:inline-block;width:25px;height:25px;background:url(//game.gtimg.cn/images/lole/V4/m/search.png);position:relative;top:7px;left:10px}
+.search{display:inline-block;background:none;position:absolute;outline:none;height:42px;width:250px;top:0;right:0;font-size:20px;color:#fff;line-height:42px;letter-spacing:2px;text-indent:5px}
+.drop-down4{width:313px;height:42px;display:inline-block;background:url(//game.gtimg.cn/images/lole/V4/m/page4downbg2.png);position:relative;margin-left:40px;top:3px}
+.down-box4{display:none;position:absolute;background-image:linear-gradient(90deg,#3b4472,#222741);top:42px;width:313px;height:auto;text-indent:5px;z-index:10}
+.down-box4 span{display:block;height:30px;font-size:16px;color:#fff}
+.box4-name{width:280px;height:100%;font-size:20px;line-height:40px;color:#fff;letter-spacing:1px;text-align:center}
+.card-con{width:739px;height:2450px;position:relative;margin-top:20px}
+.card{width:739px;height:436px;background:url(//game.gtimg.cn/images/lole/V4/m/card-conbg.png);position:relative}
+.cardh{margin-top:45px}
+.card-head{width:693px;height:60px;position:relative;top:14px;margin:0 auto}
+.card-head p{display:inline-block;line-height:60px;font-size:20px;color:#fff}
+.card-name{margin-left:20px}
+.card-power{margin-left:64px}
+.card-label{margin-left:73px}
+.card-label span{background:rgba(0,0,0,0.5);border-radius:5px;padding:5px}
+.card-power span{color:#f5b93f;margin-left:10px;font-family:'agen'}
+.card-detailed{position:absolute;right:21px;border:1.5px solid white;top:357px;width:auto;height:20px;line-height:18px !important;padding:4px}
+.card-detailed a{display:inline-block;width:100%;height:100%;position:absolute;top:0;left:0}
+.card-title{width:660px;height:60px;margin:0 auto;position:relative;top:40px}
+.card-title p{color:#ccc;font-size:20px;font-family:'fzltzchk';line-height:24px}
+.card-footer{width:500px;height:50px;position:absolute;bottom:20px;left:50px}
+.card-recommend{font-size:20px;color:#ccc;line-height:50px;font-family:'fzltzchk';display:inline-block}
+.card-recommend span{display:inline-block;width:19px;height:18px;margin-left:10px;position:relative;top:2px}
+.stars1{background:url(//game.gtimg.cn/images/lole/V4/m/stars1.png)}
+.stars2{background:url(//game.gtimg.cn/images/lole/V4/m/stars2.png)}
+.divider{display:inline-block;width:1px;height:20px;background:#ccc;position:relative;top:3px;margin-left:15px}
+.author{display:inline-block}
+.author img{width:25px;height:26px;display:inline-block;position:relative;top:5px;margin-left:15px}
+.author span{font-size:20px;font-family:'fzltzchk';color:#e2e7ff;display:inline-block;margin-left:7px}
+.card-mcon{width:652px;margin:0 auto;height:172px;display:flex;flex-wrap:nowrap;justify-content:space-between;position:relative;top:53px}
+.cards{width:109px;height:172px;background-size:100% 100%}
+.card1{width:115px;height:187px;position:relative;top:-14px;background:url(//game.gtimg.cn/images/lole/V4/m/page4-1.png)}
+.card2{background:url(//game.gtimg.cn/images/lole/V4/m/page4-2.png)}
+.card3{background:url(//game.gtimg.cn/images/lole/V4/m/page4-3.png)}
+.card4{background:url(//game.gtimg.cn/images/lole/V4/m/page4-4.png)}
+.card5{background:url(//game.gtimg.cn/images/lole/V4/m/page4-5.png)}
+.pop1{width:650px;height:454px;background:url(//game.gtimg.cn/images/lole/V4/m/loginbg.png) no-repeat}
+#pop1 .dia-close{width:30px;height:29px;background:url(//game.gtimg.cn/images/lole/V4/m/login-close.png)no-repeat;background-size:100% 100%;top:13px;right:90px;position:absolute}
+.login-cont{width:350px;height:121px;display:flex;justify-content:space-around;position:relative;top:140px}
+.login-cont a{width:100%;height:100%;display:block}
+.qq-t{width:120px;height:121px;background:url(//game.gtimg.cn/images/lole/V4/m/loginqq.png) no-repeat;position:relative}
+.wechat-t{width:120px;height:121px;background:url(//game.gtimg.cn/images/lole/V4/m/loginwechat.png) no-repeat;position:relative}
+.qq-t::after{content:'QQ';font-size:24px;position:absolute;bottom:-55px;left:0;width:100%;text-align:center;color:#fff}
+.wechat-t::after{content:'';font-size:28px;position:absolute;bottom:-55px;left:0;width:100%;text-align:center;color:#fff}
+.pop2{width:550px;height:291px;background:url(//game.gtimg.cn/images/lole/V4/m/tc-bg.png) no-repeat}
+#pop2 .dia-close{width:40px;height:39px;background:url(//game.gtimg.cn/images/lole/V3/login-close.png)no-repeat;top:-45px;right:0;position:absolute}
+#pop3 .dia-close{width:40px;height:39px;background:url(//game.gtimg.cn/images/lole/V3/login-close.png)no-repeat;top:-45px;right:0;position:absolute}
+.p2-t{font-family:'fzltzchk';font-size:34px;text-align:center;color:#fff;position:relative;top:50px;width:100%;text-indent:40px}
+.bind-tel{width:519px;margin-top:66px;margin-left:213px}
+.ipt-name{color:#e7e7e7;font-size:16px}
+.radio-name{color:#7f7878;font-size:14px}
+.ipt-text{-webkit-appearance:none;-moz-appearance:none;appearance:none;box-sizing:border-box;width:200px;height:29px;color:#7f7878;font-size:18px;line-height:29px;text-align:left;outline:none;background:#dce4e5;border:1px solid #bdc9cc;border-radius:4px}
+.pop2-btn{width:301px;height:96px;background:url(//game.gtimg.cn/images/lole/V4/m/page1-inbtn.png)no-repeat;margin-top:38px;position:relative;left:27px}
+.pop2-btn a{color:#000;font-size:42px;text-align:center;width:100%;line-height:96px;display:inline-block;text-decoration:none;font-family:'rz3'}
+.bind-tel .ipt-con:nth-child(2){margin-top:15px}
+.wccode{width:180px;height:180px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:url(//game.gtimg.cn/images/lole/V4/m/wccode.png)}
+.pop5{width:623px;height:364px;background:url(//game.gtimg.cn/images/lole/V4/m/tc-bg.png) no-repeat;position:relative}
+.pop5-div{display:flex;justify-content:center;padding-top:70px}
+.az{background:url(//game.gtimg.cn/images/lole/V4/m/az.png)no-repeat;display:block;width:266px;height:87px;}
+.pg{background:url(//game.gtimg.cn/images/lole/V4/m/pg.png)no-repeat;display:block;width:266px;height:87px;margin-bottom:60px;margin-top:20px}
+.pop5-left{margin-right:35px}
+.pop5-right img{width:274px;height:275px}
+.pop5-tip{font-size:30px;color:#ffffff;position:absolute;right:20px;top:10px;font-family:'rz3'}
+#pop5 .dia-close{width:40px;height:39px;background:url(//game.gtimg.cn/images/lole/V3/login-close.png)no-repeat;top:-45px;right:0;position:absolute}
+.m-not{display:none !important}
+.page2-main2{width:100%;height:auto;background-image:url(//game.gtimg.cn/images/lole/V4/m/page2-main2bg.jpg);background-size: 100% 100%;margin-top:96px;position:relative;padding-bottom:0px}
+.page2-main2-back{width:142px;height:52px;background:url(//game.gtimg.cn/images/lole/V4/m/page2-child-back.png);position:absolute;top:-1px;left:0;background-size:142px 52px}
+.article-title{color:#fff;text-align:center;font-size:32px;line-height:69px;padding-top:78px;height:87px}
+.article-left{color:#fff;display:inline-block;margin-left:32px;font-size:18px}
+.article-right{color:#fff;display:inline-block;font-size:18px;margin-right:32px;float:right}
+.article-content{margin-top:24px;}
+.page2-main2-articlecon span{background:#ffffff;width:93%;display:block;height:2px;margin:auto;margin-top:5px}
+.article-content  span{background:none}
+.page2-main3-video{width:686px;height:368px;position:relative;background-size:100% 100%}
+.page2-main3-video a{width:65px;height:65px;display:block;background:url(//game.gtimg.cn/images/lole/V4/m/mpage2-btn.png);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+body{background:#171620}
+#afooter{display:none;position:relative;padding:30px 0;text-align:center;font:normal 12px/19px Tahoma;z-index:10;background-color:#191219}
+#afooter,#afooter a{color:#c0c0c0;text-decoration:none}
+.article-content p{color:#fff;margin-top:20px;padding:0 32px;font-size:20px;line-height:26px;text-align:justify}
+.article-content p span{width:100%;text-align:center !important;display:inline-block;font-size:30px !important;margin-top:20px}
+.article-content p img{max-width:100%;margin-left:50%!important;transform:translateX(-50%)}
+.btn-age-tip{position:absolute;top:20px;right:20px;z-index:999;width:93px;height:119px;background-image:url(data:image/png;base64,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)}
+
+/* #pop4 .age-title{color:#fff;font-size:25px;height:50px;line-height:28px} */
+#pop4 .age-title{width: 257px;height: 26px;background: url(//game.gtimg.cn/images/lole/V4/m/age-title.png);margin: 0 auto 32px;}
+#pop4 .age-list{color:#e7e7e7;font-size:16px;overflow-y:auto;height:175px;padding-right:50px;width: 455px;}
+#pop4 .age-list li{list-style:none;line-height:30px;margin-top:30px;text-align:justify}
+#pop4 .age-list li:first-child{margin-top:0}
+#pop4 .age-list li p{margin-top:10px;text-indent:1.5em}
+#pop4 .age-list::-webkit-scrollbar{width:4px}
+#pop4 .age-list::-webkit-scrollbar-thumb{border-radius:3px;-webkit-box-shadow:inset 0 0 5px rgba(187,51,51,.8);background:rgba(187,51,51,.8)}
+#pop4 .age-list::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 5px rgba(231,231,231,.5);border-radius:3px;background:rgba(231,231,231,.5)}
+#pop4 .dia-close{width:40px;height:39px;background:url(//game.gtimg.cn/images/lole/V3/login-close.png)no-repeat;top:-60px;right:25px;position:absolute}
+.pc-nav{width:160px;position:fixed;right:0;top:50%;z-index:15}
+.pc-nav .nav-ewm{display:none}
+.pc-nav .pc{display: none;}
+.pc-nav .dh-btn{width:142px;margin:0 auto}
+.nav-team2{background:url(//game.gtimg.cn/images/lole/V4/m/nav-team.png)no-repeat;display:block;width:142px;height:234px;margin-bottom:20px;background-position:center}
+.nav-game2{background:url(//game.gtimg.cn/images/lole/V4/m/nav-game2.png)no-repeat;display:block;width:160px;height:234px;background-position:center}
+.dialog{background: none;}
+
+#pop4 .pop2{
+	padding-top: 32px;
+	padding-left: 25px;
+	
+}
+.part0-main-pc{
+	display: none;
+}
+    .more4 .more4-bg{display: none;}
+	
+    .download{display: none!important;}
+
+
+		#pop6 .dia-con{
+		background: url(//game.gtimg.cn/images/lole/V4/m/tc-pop6.jpg)no-repeat;
+		width: 500px;
+		height: 700px;
+		position: relative;
+	}
+	#pop6 .dia-close {
+	    width: 40px;
+	    height: 39px;
+	    background: url(//game.gtimg.cn/images/lole/V3/login-close.png)no-repeat;
+	    top: -45px;
+	    right: -20px;
+	    position: absolute;
+	}
+	.pop6-btn{display: block;width: 180px;height: 55px;position: absolute;left: 50%;transform:translateX(-50%);top:588px;}
+
+/* ?? */
+.page1{
+	height: 4555px;
+	background-size: auto;
+}
+.part0-bg{
+	margin-top: 150px;
+}
+.appointment-btn{
+	top: -160px;
+}
+.appointment-btn{
+	width: 220px;
+	height: 68px;
+	background: url(//game.gtimg.cn/images/lole/V4/m/page1-inbtn2.png);
+}
+.appointment-btn p{
+	font-size: 33px;
+	line-height: 71px;
+}
+.footers{
+	background: url(//game.gtimg.cn/images/lole/V4/m/footersbg.jpg);
+}
+.page1-slg{
+	margin-top: 330px;
+}
+/* update 2023.6.5 */
+.videobg-con::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 750px;
+	height: 1035px;
+	background: url(//game.gtimg.cn/images/lole/V4/m/page1bg2_bef.png);
+}
+
+/* update 2023.8.14 */
+.sw4-con{
+	display: none;
+}
+.page2tabbtncon {
+	height: 110px;
+	margin-top: 96px;
+}
+.page2-btncon{
+	padding-bottom: 25px;
+}
+.videobtn-con a{
+	visibility: hidden;
+}
+.pc-nav{
+	top: 75%;
+}

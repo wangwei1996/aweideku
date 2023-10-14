@@ -1,0 +1,554 @@
+var ActId = 7052;
+var GameId = 'lole';
+var AppUrl = 'https://ulink.game.qq.com/app/5470/79b4a1f0bace4816/index.php';
+var ActUrl = 'https://lole.qq.com/';
+var sAppId = 'ULINK-XAJQ-213018';
+
+if (window.location.hostname == 'xinliang.qq.com') {
+    AppUrl = 'https://xinliang.qq.com/egame/App5470/php/index.php';
+    ActUrl = 'https://xinliang.qq.com/egame/Act7052/html/';
+}
+
+var ActInit = {
+    logind: false, //登录状态
+    userInfo: '', //用户信息
+    reserve: false, //预约状态
+
+    shareTitle: '英雄联盟电竞经理来了！',
+    shareDesc: '现已全渠道首发，快来一起组建战队书写电竞传奇吧！',
+    shareLink: location.href.split('?')[0],
+    shareImgUrl: 'https://game.gtimg.cn/images/lole/100-100.png'
+}
+
+
+
+//获取当前页面文件名
+var pageItem = location.pathname.split('/');
+pageItem = pageItem[pageItem.length - 1];
+
+// new VConsole();
+
+var LOLAPP = LOLM.LOLAPP;
+var Common = LOLM.Common;
+
+LOLAPP.initAPP().then(function () {
+    // 原生...进行分享
+    // 注意不要让qtconfig被覆盖
+    sharePrimary();
+}).catch(function (e) {
+    console.log(e);
+});
+var plat = Common.checkPlat('lolapp')
+
+
+function sharePrimary() {
+    QTLTools.SetTitle('英雄联盟电竞经理-官方网站');
+    QTLTools.SetShare({
+        url: ActInit.shareLink,
+        // doc_id: '51040655555555',
+        title: ActInit.shareTitle,
+        content: ActInit.shareDesc,
+        thumb_url: ActInit.shareImgUrl,
+        callback: function callback(channel) {
+            console.log('点击了原生分享:', channel);
+        }
+    });
+};
+
+
+
+
+// //初始化
+// var LoginManager = ulink.LoginManager;
+// LoginManager.init();
+// LoginManager.checkLogin(function (userInfo) {
+
+//     ActInit.userInfo = userInfo;
+//     ActInit.logind = true;
+//     logined();
+// }, function () {
+//     ActInit.logind = false;
+//     // doLogin();
+// });
+
+
+
+
+
+// if (ulink.isWxApp()) {
+//     var LoginManager = ulink.LoginManager;
+//     LoginManager.init();
+//     LoginManager.checkLogin(function (userInfo) {
+//         ActInit.userInfo = userInfo;
+//         ActInit.logind = true;
+//         logined();
+//     }, function () {
+//         LoginManager.loginByWx();
+//     });
+
+//      //注销
+//      $('#btn_logout').on('click', function () {
+//         LoginManager.logout(function () {
+//             window.location.reload();
+//         });
+//     })
+// } else {
+//     need("biz.login", function (LoginManager) {
+//         //检查登录态
+//         LoginManager.init({
+//             appConfig: {
+//                 "QQBrowserAppId": "106",
+//                 "WxAppId": "wxb574fcc7b3813a37",
+//                 "AppName": "英雄联盟电竞经理",
+//                 "sServiceType": 'lole',
+//                 "scope": "snsapi_userinfo",   //默认是 snsapi_base 静默授权，如果游戏无静默权限，就需要手动改成 snsapi_userinfo
+//             }
+//         });
+
+//         $('#btn_qqlogin').click(function () {
+//             if (ulink.isMobile()) {
+//                 ulink.LoginManager.loginByPT();
+//             } else {
+//                 LoginManager.login();
+//             }
+//         })
+//         $('#btn_wxlogin').click(function () {
+//             if (ulink.isMobile()) {
+//                 if (ulink.isWxApp()) {
+//                     // var LoginManager = ulink.LoginManager;
+//                     // LoginManager.init();
+//                     // LoginManager.loginByWx();
+//                     return false;
+//                 } else {
+//                     //弹框复制
+//                     showMsg('请复制地址在微信中打开');
+//                 }
+//             } else {
+//                 LoginManager.loginByWx({
+//                     "appId": "wx835b40dcca529a84",  //游戏在微信的appid，联系内部
+//                     gameDomain: "lole.qq.com",
+//                     serviceType: "lole"
+//                 });
+//             }
+//         })
+
+//         LoginManager.checkLogin(function (userInfo) {
+//             ActInit.userInfo = userInfo;
+//             ActInit.logind = true;
+//             logined();
+//         }, function () {
+//             // doLogin()
+//             if (ulink.isQQApp()) {
+//                 LoginManager.login();
+//                 return false;
+//             }
+
+//         });
+
+
+//         //注销
+//         $('#btn_logout').on('click', function () {
+//             LoginManager.logout(function () {
+//                 window.location.reload();
+//             });
+//         })
+//     })
+// }
+
+
+
+function doLogin() {
+    if (ulink.isMobile()) {
+        if (ulink.isQQApp()) {
+            LoginManager.login();
+            return false;
+        }
+        
+        return false;
+    } else {
+        
+    }
+}
+
+
+//登录态
+function logined() {
+    if (!ActInit.logind) {
+        doLogin();
+        return false;
+    }
+    $('#unlogin').hide();
+    $('#logined').show();
+    roleName();
+
+    if (pageItem == 'main.html') {
+        reserveStatus();
+    }
+}
+
+$('#pop_qqlogin').on('click', function () {
+    TGDialogS('pop1');
+})
+
+//提交请求至AME
+amsCfg_611401 = {
+    '_everyRead': true,//_everyRead参数用于控制缓存，设为true表示每次发请求都会读取amsCfg参数的值，建议加上
+    "iActivityId": 256788, //活动id	
+    "iFlowId": 611401, //流程id
+    "sData": {//自定义传参
+    },
+    "fFlowSubmitEnd": function (res) {
+        //已预约
+        if (res.jData.OrderInfo && res.jData.OrderInfo.length > 0) {
+            $('.appointment-btn').hide();
+            $('.appointment-btn2').show();
+            ActInit.reserve = true;
+        }
+    },
+    "fFlowSubmitFailed": function (res) {
+        showMsg(res.sMsg)
+        //失败会走到这个函数
+        //条件不满足，ame返回大于0是后走到这里
+    }
+};
+
+//预约
+$('.appointment-btn').click(function () {
+    if (!ActInit.logind) {
+        doLogin();
+        return false;
+    }
+
+    if (ActInit.reserve) {
+        $('.appointment-btn').hide();
+        $('.appointment-btn2').show();
+        return;
+    }
+    var plat = 'Browser';
+    if (ulink.isQQApp()) {
+        plat = 'QQ';
+    }
+    if (ulink.isWxApp()) {
+        plat = 'WX'
+    }
+
+    amsCfg_611405['sData']['opChannel'] = plat;
+    amsCfg_611405['sData']['WXNum'] = '';
+    amsCfg_611405['sData']['FrdCode'] = '';
+    amsSubmit(256788, 611405);
+})
+
+
+//提交请求至AME
+amsCfg_611405 = {
+    '_everyRead': true,//_everyRead参数用于控制缓存，设为true表示每次发请求都会读取amsCfg参数的值，建议加上
+    "iActivityId": 256788, //活动id	
+    "iFlowId": 611405, //流程id
+    "sData": {//自定义传参
+    },
+    "fFlowSubmitEnd": function (res) {
+        $('.appointment-btn').hide();
+        $('.appointment-btn2').show();
+        ActInit.reserve = true;
+        showMsg('预约成功');
+    },
+    "fFlowSubmitFailed": function (res) {
+        //失败会走到这个函数
+        //条件不满足，ame返回大于0是后走到这里
+        showMsg(res.sMsg);
+    }
+};
+
+//预约查询
+function reserveStatus() {
+    amsSubmit(256788, 611401);
+}
+
+
+function roleName() {
+
+    if (typeof ActInit.userInfo.nickname != undefined && ActInit.userInfo.nickname != 'undefined') {
+        $('#userinfo').text(ActInit.userInfo.nickname);
+    }
+    if (plat == 'ZM') {
+
+    }
+}
+
+
+//手Q 微信内隐藏注销
+if (ulink.isQQApp() || ulink.isWxApp() || plat == 'ZM') {
+    $('#btn_logout').hide();
+}
+
+
+//推荐
+function indexTop() {
+    ajaxGet('News/new', function (res) {
+        if (res.iRet != 0) {
+            showMsg(res.sMsg);
+            return false;
+        }
+        $('#newIndex').empty();
+
+        $.each(res.jData, function (i, row) {
+            var tag = (row.sTagInfo.split(',')[0]).split('|')[1] || "";
+            $('#newIndex').append('<div class="swiper-slide" onclick="indexLink(\'' + row.iDocID + '\')">' +
+                '<div class="sw1-img1 sw1-img" style="background:url(\'' + row.sIMG + '\')"></div>' +
+                '<p class="sw1-time">' + row.sIdxTime.substring(0, 10) + '</p>' +
+                '<p class="sw1-news">' + tag + '</p>' +
+                '<p class="sw1-title">' + row.sTitle + '</p>' +
+                '<p class="sw1-abstract">' + row.sDesc + '</p>' +
+                '</div>');
+        })
+    })
+}
+
+function indexLink(id) {
+	LOLSendClickAT('link','links',id);
+    location.href = ActUrl + 'detail.html?id=' + id;
+}
+
+//首页
+if (pageItem == 'main.html') {
+    indexTop();
+}
+
+//新闻
+if (pageItem == 'news.html') {
+    newTop();
+    page = 1;
+    newList();
+}
+
+if (pageItem == 'detail.html') {
+    var id = ulink.getQueryString('id');
+    if (!id) {
+        ulink.alert('参数错误，禁止访问！');
+    } else {
+        detail(id)
+    }
+
+}
+
+
+//详情
+function detail(id) {
+    ajaxPost('News/details',
+        {
+            id: id
+        },
+        function (res) {
+            if (res.iRet != 0) {
+                showMsg(res.sMsg);
+                return false;
+            }
+
+            //图文
+            if (res.jData[id].iInfoType == 1) {
+                newDetail(res.jData[id]);
+            } else {
+                //视频
+                newVideoDetail(res.jData[id]);
+            }
+            $('body,html').scrollTop(0);
+        })
+
+}
+
+function newTop() {
+    if ($('#newTop').children('.swiper-slide').length == 0) {
+        ajaxGet('News/top',
+            function (res) {
+                if (res.iRet != 0) {
+                    showMsg(res.sMsg);
+                    return false;
+                }
+                $.each(res.jData, function (i, row) {
+                    var tag = (row.sTagInfo.split(',')[0]).split('|')[1] || "";
+                    $('#newTop').append('<div class="swiper-slide" onclick="indexLink(\'' + row.iDocID + '\')">' +
+                        '<div class="sw4-img sw4-img1" style="background:url(\'' + row.sIMG + '\')"></div>' +
+                        '<div class="sw4-titlecon">' +
+                        '<p class="sw4-time">' + row.sIdxTime.substring(0, 10) + '</p>' +
+                        '<p class="sw4-news">' + tag + '</p>' +
+                        '<p class="sw4-title">' + row.sTitle + '</p>' +
+                        '<p class="sw4-abstract">' + row.sDesc + '</p>' +
+                        '</div>' +
+                        '</div>');
+                })
+            }
+        )
+    }
+}
+
+
+
+
+var page = 1;
+function newList() {
+    var tagId = $('.page2tabbtn-ac').data('id');
+    ajaxPost('News/list', {
+        page: page,
+        tagId: tagId
+    }, function (res) {
+        if (res.iRet != 0) {
+            showMsg(res.sMsg);
+            return false;
+        }
+        $('#newList').empty();
+
+        var hasMore = (res.jData.length == 9)
+
+        $.each(res.jData, function (i, row) {
+           var tag = (row.sTagInfo.split(',')[0]).split('|')[1] || "";
+            $('#newList').append('<div class="page2new" onclick="indexLink(\'' + row.iDocID + '\')">' +
+                '<div class="page2new-i" style="background:url(\'' + row.sIMG + '\')"></div>' +
+                '<div class="page2new-t">' +
+                '<p class="page2new-time">' + row.sIdxTime.substring(0, 10) + '</p>' +
+                '<p class="page2new-new">' + tag + '</p>' +
+                '<p class="page2new-title">' + row.sTitle + '</p>' +
+                '<p class="page2new-content">' + row.sDesc + '</p>' +
+                '</div>' +
+                '</div>');
+        })
+        drawPageHtml(hasMore)
+    })
+}
+
+function drawPageHtml(hasMore) {
+    var pageHtml = '';
+    pageHtml += '<div class="page2-btnleft"><a href="javascript:;"></a></div>';
+    if ((page - 1) > 0) {
+        pageHtml += '<span class="sp">' + (page - 1) + '</span>';
+    }
+    pageHtml += '<span class="sp sp-ac">' + page + '</span>';
+    if (hasMore) {
+        pageHtml += '<span class="sp">' + (page + 1) + '</span>';
+        pageHtml += '<div class="page2-btnright"><a href="javascript:;"></a></div>';
+    }
+    $('.page2-btncon').html(pageHtml)
+}
+
+
+//上一页
+$('.page2-btncon').on('click', '.page2-btnleft', function () {
+    if (page <= 1) {
+        return;
+    }
+    page--;
+    newList();
+})
+//下一页
+$('.page2-btncon').on('click', '.page2-btnright', function () {
+    page++;
+    newList();
+})
+
+//跳转
+$('.page2-btncon').on('click', 'span.sp', function () {
+    if (page == parseInt($(this).text())) {
+        return false;
+    }
+    page = parseInt($(this).text())
+    newList();
+})
+
+//page2tab1
+$('.page2tabbtn').click(function () {
+    $(this).addClass('page2tabbtn-ac').siblings().removeClass('page2tabbtn-ac');
+    page = 1;
+    newList();
+});
+
+
+
+//图文
+function newDetail(data) {
+    $('.page2-main2 .article-title').text(data.sTitle);
+    $('.page2-main2 .article-left').text(data.sAuthor);
+    $('.page2-main2 .article-right').text(data.sIdxTime);
+    $('.page2-main2 .article-content').html(data.sContent);
+    // console.log(data)
+}
+
+//视频
+function newVideoDetail(data) {
+    $('.page2-main2 .article-title').text(data.sTitle);
+    $('.page2-main2 .article-left').text(data.sAuthor);
+    $('.page2-main2 .article-right').text(data.sIdxTime);
+    $('.page2-main2 .article-content').addClass('page2-main3-video').addClass('center').css({
+        'background': 'url(\'' + data.sIMG + '\')'
+    }).html('<a href="javascript:showVideoDia(\'' + data.sVID + '\')"></a>');
+}
+
+if (!ulink.isMobile()) {
+
+} else {
+    // nav下拉
+//  $('.mnav-btn').click(function () {
+//      $('.popdown').slideToggle();
+//  });
+//  $('.popdown a').click(function () {
+//      $('.popdown').slideToggle();
+//  });
+//  $('.nav ul li').click(function () {
+//      $(this).addClass('nav-hover').siblings().removeClass('nav-hover');
+//  });
+
+ $('.mnav-btn').click(function () {
+ 	$(this).toggleClass('mnav-btn2');
+   		$('.popdown').show();
+        $('.popdown').toggleClass('ac-left');
+    });
+    
+    $('.mnav-btn2').click(function () {
+    	$(this).toggleClass('mnav-btn2');
+    	  $('.popdown').toggleClass('ac-right');
+    });
+
+
+}
+
+
+
+
+var showMsg = function (msg) {
+    ulink.alert({
+        title: "",
+        content: msg,
+        zindex: 99999,
+    });
+}
+
+
+function ajaxGet(route, success) {
+    ulink.http.get({
+        url: AppUrl,
+        params: {
+            iActId: ActId,
+            game: GameId,
+            route: route
+        },
+        success: success,
+        error: function (res) {
+            console.log(res)
+            showMsg('o(TヘTo) 网络不太稳定，请稍后重试呢~');
+        }
+    });
+}
+function ajaxPost(route, formdata, success) {
+    ulink.http.post({
+        url: AppUrl,
+        params: {
+            iActId: ActId,
+            game: GameId,
+            route: route
+        },
+        formdata: formdata,
+        success: success,
+        error: function (res) {
+            console.log(res)
+            showMsg('o(TヘTo) 网络不太稳定，请稍后重试呢~');
+        }
+    });
+}

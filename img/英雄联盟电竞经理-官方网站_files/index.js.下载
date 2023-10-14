@@ -1,0 +1,358 @@
+if (innerWidth > 1024) {
+    pcadapt();
+}
+
+
+function pcadapt() {
+    var zoom = 1;
+    // 屏幕自适应
+    var adaptViewport = (function () {
+        function detectIE() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.match(/MSIE (\d+)/g);
+            if (msie != null) {
+                return parseInt(msie[0].match(/\d+/g)[0]);
+            }
+            // IE 11
+            var trident = ua.indexOf('Trident/');
+            if (trident > 0) {
+                var rv = ua.indexOf('rv:');
+                return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+            }
+            return false;
+        }
+        var minWidth = 1380; // 最小宽度
+        var designWidth = 1920; // 设计稿宽度
+        var isFirefox = navigator.userAgent.indexOf("Firefox") != -1
+        var ieVersion = detectIE();
+
+        function resize() {
+            // doc.clientWidth不包含滚动栏宽度
+            var ww = document.documentElement.clientWidth || window.innerWidth;
+            var realWid = Math.max(ww, minWidth);
+            zoom = realWid / designWidth;
+            if (ieVersion && ieVersion < 9) {
+                return;
+            }
+            // firefox不支持zoom. ie9,10,11 zoom表现奇怪
+            // if (isFirefox || ieVersion >= 9) {
+            if (zoom !== 1) {
+                if (!$('.wrap').parent().hasClass('wrap-scale')) {
+                    $('.wrap').wrap('<div class="wrap-scale"></div>')
+                    $('.wrap-scale').css('position', 'relative');
+                    $('.wrap').data('originHeight', $('.wrap').outerHeight())
+                }
+                var transformOrigin = '0% 0%';
+                $('.wrap').css({
+                    'width': designWidth,
+                    'transform': 'scale(' + zoom + ')',
+                    'transform-origin': transformOrigin,
+                    'margin-left': 0
+                })
+				
+				
+                // $('.wrap-scale').css({
+                //         'width': (realWid > minWidth ? 'auto' : minWidth),
+                //         'height': $('.wrap').data('originHeight') * zoom,
+                //         'overflow': 'hidden'
+                //     })
+                // $('.side_nv').css({'transform':'scale('+zoom+')', 'transform-origin': '50% 50%', 'margin-left': 0})
+            }
+            // } else {
+            //   $('.wrap').css({'width': designWidth, 'zoom': zoom});
+            // }
+        }
+        resize();
+        window.onresize = resize;
+        // 当切换tab等情形导致.wrap高度改变时，调用此函数。
+        function resizeWrapScale() {
+            $('.wrap-scale').css({
+                'height': $('.wrap').outerHeight() * zoom
+            })
+        }
+        return {
+            zoom: zoom,
+            resizeWrapScale: resizeWrapScale
+        }
+    })();
+
+
+}
+
+
+// page1 video
+// k3273xz2b4p
+// 打开弹窗
+function TGDialogS(e) {
+    // 利用milo库引入dialog组件
+    need("biz.dialog", function (Dialog) {
+        Dialog.show({
+            id: e,
+            bgcolor: '#000', //弹出“遮罩”的颜色，格式为"#FF6600"，可修改，默认为"#fff"
+            opacity: 50 //弹出“遮罩”的透明度，格式为｛10-100｝，可选
+        });
+    });
+}
+// 关闭弹窗
+function closeDialog() {
+    // 利用milo库引入dialog组件
+    need("biz.dialog", function (Dialog) {
+        Dialog.hide();
+    });
+}
+
+// 视频弹窗
+var diaPlayer = null;
+function showVideoDia(vid) {
+    // 弹窗视频初始化
+    diaPlayer = new Txplayer({
+        containerId: 'tv1',
+        vid: vid,
+        width: '100%',
+        height: '100%',
+        autoplay: true
+    });
+    TGDialogS('video1');
+}
+// 关闭视频弹窗
+function closeVideoDia() {
+    $('#tv1').html('');
+    diaPlayer = null;
+    showDialog.hide();
+};
+
+
+
+
+
+//sw2
+var swiper2 = new Swiper('.swiper-container2', {
+    observeParents: true, //修改swiper的父元素时，自动初始化swiper
+    observer: true,
+	 centeredSlides: true,
+	 slidesPerView: 'auto',
+    initialSlide :0,
+    navigation: {
+        nextEl: '.swiper-button-next2',
+        prevEl: '.swiper-button-prev2',
+    },
+	pagination: {
+	      el: '.swiper-container2 .swiper-pagination',
+	    },
+});
+
+
+
+
+
+setTimeout(function(){
+    var swiper4 = new Swiper('.swiper-container4', {
+        slidesPerView: 'auto',
+        spaceBetween: 31,
+        initialSlide :0,
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,   //修改swiper自己或子元素时，自动初始化swiper
+        navigation: {
+            nextEl: '.swiper-button-next4',
+            prevEl: '.swiper-button-prev4',
+        }
+//    	$(".swiper-container4 .swiper-wrapper").css('transform','translate3d(0px, 0px, 0px)');
+    });
+
+}, 500);
+
+
+
+//下拉
+$('.drop-down').click(function () {
+    $(this).children('.down-box').toggle();
+    $(this).siblings().children('.down-box').hide();
+    $('.drop-down4 .down-box4').hide();
+});
+$('.drop-down4').click(function () {
+    $(this).children('.down-box4').toggle();
+    $('.drop-down .down-box').hide();
+});
+
+$('.down-box span').click(function () {
+    $(this).parent().siblings().html($(this).html());
+});
+$('.down-box4 span').click(function () {
+    $(this).parent().siblings().html($(this).html());
+});
+
+$('#search').click(function () {
+    alert($('#searcht').val());
+});
+
+//page3tab
+$('.page3btn').click(function () {
+    $(this).addClass('page3btn-ac').siblings().removeClass('page3btn-ac');
+    var index = $(this).index();
+    $('.page3card-con .page3card').eq(index).addClass('page3card-ac').siblings().removeClass('page3card-ac');
+});
+
+
+var images = new Array()   
+            function preload() {   
+                for (i = 0; i < preload.arguments.length; i++) {   
+                    images[i] = new Image()   
+                    images[i].src = preload.arguments[i]   
+                }   
+            }   
+            preload(   
+                "//game.gtimg.cn/images/lole/V3/tc-pop6.jpg", 
+                "//game.gtimg.cn/images/lole/V3/m/tc-pop6.jpg", 
+                "//game.gtimg.cn/images/lole/V3/tc-bg.png",   
+                "//game.gtimg.cn/images/lole/V3/az.png",   
+                "//game.gtimg.cn/images/lole/V3/pg.png",
+                "//game.gtimg.cn/images/lole/V3/dia-close.png",
+				"//game.gtimg.cn/images/lole/V3/tc-ewm.png"   
+            )   
+
+
+
+if (!ulink.isMobile()) {
+
+	var isShow = true;
+	$(window).scroll(function () {
+					//获取文档滚动高度
+					//当页面滚动到一定高度时，侧边导航灵活切换类
+					var top = $(document).scrollTop();
+					
+					if (top<900) {
+						$('.pc-nav').hide(300);
+					} else {
+	
+						
+						if (isShow === false) {
+							$('.pc-nav').hide(300);
+						} else {
+							$('.pc-nav').fadeIn(300);
+						}
+					}
+				});
+	               
+
+
+    
+    setTimeout(() => {
+        var swiper1 = new Swiper('.swiper-container1', {
+            slidesPerView:'auto',
+            spaceBetween: 40,
+            initialSlide :0,
+            observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            observer: true,   //修改swiper自己或子元素时，自动初始化swiper
+            navigation: {
+                nextEl: '.swiper-button-next1',
+                prevEl: '.swiper-button-prev1',
+            },
+			
+			
+        });
+     }, 500);
+    //  setTimeout(function(){$(".swiper-container1 .swiper-wrapper").css('transform','translate3d(0px, 0px, 0px)')}, 800);
+      
+
+//setTimeout(() => {$('#newIndex').css("transform","translate3d(0,0,0)")}, 50)
+ 
+
+
+    //sw3
+    var swiper3 = new Swiper('.swiper-container3', {
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,
+        slidesPerView: 5,
+        spaceBetween: 2,
+        centeredSlides: 'auto',
+        loopAdditionalSlides: 100,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next3',
+            prevEl: '.swiper-button-prev3',
+        },
+    });
+
+    var navIndex = 1;
+    $('.popdown').on('click', 'li', function () {
+        var navTextLen = $(this).text().length
+        if (navTextLen < 4) {
+            navIndex = 1
+        } else {
+            navIndex = 2
+        }
+        console.log($(this).text())
+    })
+
+
+   
+
+} else {
+    //sw1 移动端
+    var swiper1 = new Swiper('.swiper-container1', {
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,   //修改swiper自己或子元素时，自动初始化swiper
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        centeredSlides: 'auto',
+        loopAdditionalSlides: 100,
+        navigation: {
+            nextEl: '.swiper-button-next1',
+            prevEl: '.swiper-button-prev1',
+        },
+		pagination: {
+		      el: '.swiper-container1  .swiper-pagination',
+		    },
+        // loop: true,
+    });
+
+    //sw3 移动端
+    var swiper3 = new Swiper('.swiper-container3', {
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,
+        slidesPerView: 3.7,
+        spaceBetween: 1,
+        centeredSlides: 'auto',
+        loopAdditionalSlides: 100,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next3',
+            prevEl: '.swiper-button-prev3',
+        },
+    });
+
+}
+
+
+$('.page2-main2-back').click(function () {
+    if(document.referrer === '' || document.referrer.search('qq.com')==-1){
+        window.location = 'https://lole.qq.com/news.html'
+    }
+    else{
+        history.back(-1)
+    }
+    
+});
+$('.page2-main3-back').click(function () {
+    history.back(-1);
+});
+
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    $('.footers .pcnot1').click(() => TGDialogS('pop3'))
+}
+
+
+//  var player3 = new Txp.Player({
+//     containerId: 'video_container3',       
+//     vid: 'f3266dqx2nw',
+//     autoplay:false,
+//     mini:false 
+// });
+
+//   $('.page2videobtn3').click(function(){
+//       $(this).hide();
+//       player3.play();
+//       console.log(player3)
+//  });
+

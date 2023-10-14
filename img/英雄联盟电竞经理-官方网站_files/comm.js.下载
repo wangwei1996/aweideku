@@ -1,0 +1,137 @@
+  //加载js
+  function loadScripts(t, e) { function a() { var o = document.createElement("script"); o.type = "text/javascript"; var c = -1 == t[n].indexOf("?") ? t[n] + "?d=" + Math.random() : t[n] + "&d=" + Math.random(); o.src = c, document.body.appendChild(o), n++, o.readyState ? o.onreadystatechange = function () { ("loaded" == o.readyState || "complete" == o.readyState) && (o.onreadystatechange = null, d++, d < t.length ? a() : e && e()) } : o.onload = function () { d++, d < t.length ? a() : e && e() } } e = e || function () { }; var n = 0, d = 0; a() }
+  if (/(iPhone|iPad|iPod|iOS|Android|Windows Phone|BlackBerry|SymbianOS)/i.test(navigator.userAgent)) {
+      loadScripts([
+          "//pub.idqqimg.com/qqmobile/qqapi.js?_bid=152",//用户手Q分享以及在手机上拉起掌盟
+          "//ossweb-img.qq.com/images/js/zepto/zepto.min.js",//移动端必引，同时分享依赖该文件
+          "//ossweb-img.qq.com/images/js/mobile_bundle/milo.js",
+          "//lol.qq.com/m/public/LOL_App.js",
+          "//lole.qq.com/js/V4/index.js",
+          "//lole.qq.com/js/V4/main.js",
+      ], function () {
+          init_ZMApp({
+              'title': '英雄联盟电竞经理',
+              'summery': '现已全渠道首发，快来一起组建战队书写电竞传奇吧！',
+              'subtitle': '英雄联盟电竞经理来了！',
+              'img': 'https://game.gtimg.cn/images/lole/100-100.png',
+              'url': location.href.split('?')[0],
+              'WXtrigger': function (res) {
+                  //微信动作回调
+              },
+              'WXsuccess': function (res) {
+                  //微信成功回调
+                  if (!res) return;
+                  if (res.errMsg == 'sendAppMessage:ok') {
+                      //微信分享个人
+                  } else if (res.errMsg == 'shareTimeline:ok') {
+                      //微信分享朋友圈
+                  } else if (res.errMsg == 'shareQQ:ok') {
+                      //微信分享至QQ
+                  }
+              },
+              'WXcancel': function (res) {
+                  //微信分享取消动作回调
+              },
+              'WXfail': function (res) {
+                  //微信分享失败动作回调
+              },
+              'QQtrigger': function (res) {
+                  //QQ动作回调
+              },
+              'QQcallback': function (res) {
+                  //QQ分享成功
+              },
+              'LOL_APPsuccess': function (res) {
+                  //掌盟分享成功
+              }
+          })
+          // 移动登录
+          // milo.ready(function () {
+          //     need("biz.login", function (LoginManager) {
+          //         LoginManager.init({
+          //             appConfig: {
+          //                 "QQBrowserAppId": "106",
+          //                 "WxAppId": "wxb574fcc7b3813a37",
+          //                 "AppName": "英雄联盟电竞经理",
+          //                 "sServiceType": 'lole',
+          //                 "scope": "snsapi_userinfo",   //默认是 snsapi_base 静默授权，如果游戏无静默权限，就需要手动改成 snsapi_userinfo
+          //             }
+          //         });
+
+          //         //QQ登录
+          //         milo.addEvent(g('btn_qqlogin'), 'click', function (e) {
+          //             LoginManager.login();
+          //         });
+
+          //         //微信登录
+          //         milo.addEvent(g('btn_wxlogin'), 'click', function (e) {
+          //             if (CheckApp.Is_Plat == "WX") {
+          //                 LoginManager.loginByWX();
+          //             } else {
+          //                 showMsg('请复制地址在微信中打开');
+          //             }
+          //         });
+          //         //注销
+          //         milo.addEvent(g("btn_logout"), "click", function () {
+          //             LoginManager.logout(function () {
+          //                 window.location.reload();
+          //             });
+          //         });
+
+          //         //检查登录态
+          //         LoginManager.checkLogin(function (userInfo) {
+          //             ActInit.userInfo = userInfo;
+          //             ActInit.logind = true;
+          //             logined();
+          //         }, function () {
+          //             if (CheckApp.Is_Plat == 'WX') {
+          //                 LoginManager.loginByWX();
+          //             } else if (CheckApp.Is_Plat == 'QQ') {
+          //                 LoginManager.login();
+          //             }
+          //         });
+          //     });
+          // });
+      })
+  } else {
+      loadScripts([
+          "//ossweb-img.qq.com/images/js/milo_bundle/milo.js",
+          "//lol.qq.com/m/public/LOL_App.js",
+          "//lole.qq.com/js/V4/index.js",
+          "//lole.qq.com/js/V4/main.js",
+      ], function () {
+          // PC登录
+          // milo.ready(function () {
+          //     need("biz.login", function (LoginManager) {
+          //         //QQ登录
+          //         milo.addEvent(g('btn_qqlogin'), 'click', function (e) {
+          //             LoginManager.login();
+          //         });
+          //         //微信登录
+          //         milo.addEvent(g('btn_wxlogin'), 'click', function (e) {
+          //             LoginManager.loginByWx({
+          //                 "appId": "wx835b40dcca529a84",  //游戏在微信的appid，联系内部
+          //                 gameDomain: "lole.qq.com",
+          //                 serviceType: "lole"
+          //             });
+          //         });
+
+          //         //注销
+          //         milo.addEvent(g("btn_logout"), "click", function () {
+          //             LoginManager.logout(function () {
+          //                 window.location.reload();
+          //             });
+          //         })
+
+          //         //检查登录态
+          //         LoginManager.checkLogin(function (userInfo) {
+          //             ActInit.userInfo = userInfo;
+          //             ActInit.logind = true;
+          //             logined();
+          //         }, function () {
+
+          //         })
+          //     });
+          // });
+      })
+  }
